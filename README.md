@@ -1,3 +1,3 @@
 # crud-karyawan
 
-CRUD latihan tabel karyawan
+CRUD latihan tabel karyawan dan jabatan
