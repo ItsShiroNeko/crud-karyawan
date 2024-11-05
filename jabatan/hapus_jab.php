@@ -6,4 +6,4 @@ echo $id;
 
 mysqli_query($conn, "DELETE from jabatan where id_jab='$id'");
 
-header("location:input_jab.php");
+header("location:list_jab.php");

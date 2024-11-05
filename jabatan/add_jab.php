@@ -10,7 +10,7 @@ $stmt->bind_param("ssi", $jabatan, $gaji, $tunjangan);
 
 if ($stmt->execute()){
     echo "Data berhasil disimpan";
-    header("Location: ../index.php");
+    header("Location: list_jab.php");
     exit;
 
 }else{

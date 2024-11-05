@@ -41,7 +41,7 @@
                         </div>
                         <br /> 
                         <input type="submit" class="btn btn-primary" value="Update Jabatan"> 
-                        <a class="btn btn-danger" href="input_jab.php">Back</a>
+                        <a class="btn btn-danger" href="list_jab.php">Back</a>
                     </form> 
                 <?php 
                 } else {
