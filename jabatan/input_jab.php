@@ -25,47 +25,8 @@
                 <input type="number" id="tunjangan" name="tunjangan" class="form-control" required placeholder="123456789">
             </div>
             <button type="submit" class="btn btn-primary">Simpan</button>
-            <a class="btn btn-danger" href="../index.php">Kembali</a>
+            <a class="btn btn-danger" href="list_jab.php">Kembali</a>
         </form>
     </div>
-</body>
-<body class="container-fluid">
- 
-    <center><h2 class="mt-4">List Jabatan</h2></center>
-    <br/>
-    <br/>
-    <table class="table table-striped table-bordered">
-        <thead class="thead-light">
-            <tr>
-                <th>No</th>
-                <th>Jabatan</th>
-                <th>Gaji Pokok</th>
-                <th>Tunjangan</th>
-                <th>Opsi</th>
-            </tr>
-        </thead>
-        <tbody>
-        <?php 
-        include '../conn.php';
-        $no = 1;
-        $data = mysqli_query($conn, "SELECT * FROM jabatan  ");
-
-        while($d = mysqli_fetch_array($data)){
-            ?>
-            <tr>
-                <td><?php echo $no++?></td>
-                <td><?php echo htmlspecialchars($d['nama_jab']); ?></td>
-                <td><?php echo "Rp" . number_format(htmlspecialchars($d['gaji_pokok']), 2, ",", "."); ?></td>
-                <td><?php echo "Rp" . number_format(htmlspecialchars($d['tunjangan']), 2, ",", "."); ?></td>
-                <td>
-                    <a href="edit_jab.php?id=<?php echo $d['id_jab']; ?>" class="btn btn-warning btn-sm">Edit</a>
-                    <a href="hapus_jab.php?id=<?php echo $d['id_jab']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Anda yakin ingin menghapus data ini?');">Hapus</a>
-            </td>
-            </tr>   
-            <?php 
-        }
-        ?>
-        </tbody>
-    </table>
 </body>
 </html>
