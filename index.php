@@ -41,8 +41,8 @@
                 <td><?php echo htmlspecialchars($d['no_induk']); ?></td>
                 <td><?php echo htmlspecialchars($d['nama']); ?></td>
                 <td><?php echo htmlspecialchars($d['nama_jab']); ?></td>
-                <td><?php echo htmlspecialchars($d['gaji_pokok']); ?></td>
-                <td><?php echo htmlspecialchars($d['tunjangan']); ?></td>
+                <td><?php echo "Rp" . number_format(htmlspecialchars($d['gaji_pokok']), 2, ",", "."); ?></td>
+                <td><?php echo "Rp" . number_format(htmlspecialchars($d['tunjangan']), 2, ",", "."); ?></td>
                 <td>
                     <a href="edit.php?id=<?php echo $d['id_kar']; ?>" class="btn btn-warning btn-sm">Edit</a>
                     <a href="hapus.php?id=<?php echo $d['id_kar']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Anda yakin ingin menghapus data ini?');">Hapus</a>
@@ -54,5 +54,6 @@
         </tbody>
     </table>
     <a href="input.php" class="btn btn-primary mb-3">+ Tambah Karyawan</a>
+    <a href="jabatan/input_jab.php" class="btn btn-secondary mb-3">+ Tambah Jabatan</a>
 </body>
 </html>

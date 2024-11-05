@@ -8,16 +8,16 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h2 class="mb-4">Form Input Karyawan</h2>
+        <h2 class="mb-4">Input Karyawan</h2>
         <form action="add.php" method="POST">
             <div class="form-group">
                 <label for="no_induk">No Induk</label>
-                <input type="text" id="no_induk" name="no_induk" class="form-control" required>
+                <input type="text" id="no_induk" name="no_induk" class="form-control" required placeholder="123456789">
             </div>
 
             <div class="form-group">
                 <label for="nama">Nama</label>
-                <input type="text" id="nama" name="nama" class="form-control" required>
+                <input type="text" id="nama" name="nama" class="form-control" required placeholder="asep galon">
             </div>
 
             <div class="form-group">
