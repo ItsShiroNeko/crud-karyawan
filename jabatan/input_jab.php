@@ -37,6 +37,7 @@
     <table class="table table-striped table-bordered">
         <thead class="thead-light">
             <tr>
+                <th>No</th>
                 <th>Jabatan</th>
                 <th>Gaji Pokok</th>
                 <th>Tunjangan</th>
@@ -52,7 +53,7 @@
         while($d = mysqli_fetch_array($data)){
             ?>
             <tr>
-                
+                <td><?php echo $no++?></td>
                 <td><?php echo htmlspecialchars($d['nama_jab']); ?></td>
                 <td><?php echo "Rp" . number_format(htmlspecialchars($d['gaji_pokok']), 2, ",", "."); ?></td>
                 <td><?php echo "Rp" . number_format(htmlspecialchars($d['tunjangan']), 2, ",", "."); ?></td>
