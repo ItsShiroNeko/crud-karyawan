@@ -6,54 +6,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Input Jabatan</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .sidebar {
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 230px;
+            background-color: #1e3a8a;
+            color: #fff;
+            padding-top: 1rem;
+        }
+
+        .sidebar h5 {
+            font-weight: bold;
+            color: #f8f9fa;
+        }
+
+        .sidebar a {
+            color: #f8f9fa;
+            display: block;
+            padding: 15px 20px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            font-weight: 500;
+        }
+
+        .sidebar a:hover {
+            background-color: #3b82f6;
+        }
+
+        .content {
+            margin-left: 240px;
+            padding: 2rem;
+        }
+
+        .table th,
+        .table td {
+            vertical-align: middle;
+            text-align: center;
+        }
+    </style>
 </head>
-<style>
-    .table th,
-    .table td {
-        vertical-align: middle;
-    }
-
-    .sidebar {
-        height: 100vh;
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: 230px;
-        background-color: #343a40;
-        color: #fff;
-        padding-top: 1rem;
-    }
-
-    .sidebar a {
-        color: #fff;
-        display: block;
-        padding: 20px;
-        text-decoration: none;
-    }
-
-    .sidebar a:hover {
-        background-color: #495057;
-    }
-
-    .content {
-        margin-left: 10rem;
-        padding: 2rem;
-    }
-</style>
 
 <body class="container">
     <div class="sidebar">
-        <h5 class="text-center fw-bold text-uppercase">admin dashboard</h5>
-        <a href="../index.php" class="fw-bold ">Karyawan</a>
+        <h5 class="text-center text-uppercase">Admin Dashboard</h5>
+        <a href="../index.php" class="fw-bold">Karyawan</a>
         <a href="list_jab.php">Jabatan</a>
     </div>
-    <div class="content">
 
-        <center>
+    <div class="content">
+        <div class="text-center">
             <h2 class="mt-4">Data Jabatan</h2>
-        </center>
+        </div>
         <br />
-        <br />
+
         <table class="table table-striped table-bordered">
             <thead class="thead-light">
                 <tr>
@@ -68,12 +76,12 @@
                 <?php
                 include '../conn.php';
                 $no = 1;
-                $data = mysqli_query($conn, "SELECT * FROM jabatan  ");
+                $data = mysqli_query($conn, "SELECT * FROM jabatan");
 
                 while ($d = mysqli_fetch_array($data)) {
                     ?>
                     <tr>
-                        <td><?php echo $no++ ?></td>
+                        <td><?php echo $no++; ?></td>
                         <td><?php echo htmlspecialchars($d['nama_jab']); ?></td>
                         <td><?php echo "Rp" . number_format(htmlspecialchars($d['gaji_pokok']), 2, ",", "."); ?></td>
                         <td><?php echo "Rp" . number_format(htmlspecialchars($d['tunjangan']), 2, ",", "."); ?></td>
@@ -88,6 +96,7 @@
                 ?>
             </tbody>
         </table>
+
         <a href="input_jab.php" class="btn btn-primary">Tambah Jabatan</a>
     </div>
 </body>
